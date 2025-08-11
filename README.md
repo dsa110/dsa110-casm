@@ -11,6 +11,7 @@ Please ignore many of the comments in the code, especially around beamforming in
  - Channels
  - Antennas
  - "slow" time samples, i.e., an index that iterates for every second time sample.
+
 Dimensions are hardcoded in dsaX_def.h
 
 This is not necessarily the preferred format. An ideal format to avoid initial transposes and messing with the "fast" time samples would be blocks of [channels, 2 pols, time samples, antennas]. I'm not sure what the CASM packet format is, and how straightforward it would be to create blocks in this format within the packet capture code. A compromise may also be appropriate. 
@@ -19,5 +20,6 @@ This is not necessarily the preferred format. An ideal format to avoid initial t
  - Channels
  - Time samples
  - Beams
+
 To be confusing, the expected number of channels and beams are hardcoded within dsaX_hella, and the number of time samples is in the input config file (see the usage() function accessed via -h).
 
